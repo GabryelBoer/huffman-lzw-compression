@@ -9,10 +9,5 @@ venv/
 *.lzw
 /*.pdf
 /*.docx
-!slides/*.pdf
-article/modelosparapublicaodeartigos/
-article/sbc-template.aux
-article/sbc-template.bbl
-article/sbc-template.blg
-article/sbc-template.dvi
-article/sbc-template.log
+article/
+slides/

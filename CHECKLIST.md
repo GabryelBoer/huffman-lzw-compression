@@ -13,8 +13,8 @@
 
 - [x] README.md (estilo MANET)
 - [x] RESULTADOS-BENCHMARK.md
-- [x] article/artigo.docx (estrutura Guia_Huffman_LZW)
-- [x] slides/apresentacao.pdf (10 slides, sem link do repo)
+- [x] article/artigo.docx local (fora do repo, estrutura Guia_Huffman_LZW)
+- [x] slides/apresentacao.pdf local (fora do repo, 10 slides)
 - [x] results/compression-summary.csv
 - [x] benchmark-plots/*.png
 - [ ] Artigo compilado em PDF (requer pdflatex local)
@@ -34,7 +34,7 @@
 - [x] Texto em portugues culto, presente do indicativo
 - [x] Sem "acima/abaixo" no artigo
 - [x] Unidades e siglas corretas
-- [x] Referencias bibliograficas em referencias.bib
+- [x] Referencias bibliograficas no artigo Word (formato ABNT)
 
 ## GitHub
 

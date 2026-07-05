@@ -56,8 +56,6 @@ data/baseline/      # log de contraste
 results/            # CSVs do benchmark
 benchmark-plots/    # graficos PNG
 tests/              # testes round-trip
-article/            # artigo em Word (artigo.docx)
-slides/             # apresentacao PDF
 run-all.sh          # executa benchmark completo
 plot-results.py     # gera graficos
 ```
@@ -98,8 +96,9 @@ O script executa o benchmark em `data/` e gera:
 | Documento | Conteudo |
 |-----------|----------|
 | [RESULTADOS-BENCHMARK.md](RESULTADOS-BENCHMARK.md) | Analise detalhada com graficos e correlacao perfil-desempenho |
-| [article/artigo.docx](article/artigo.docx) | Artigo cientifico completo (estrutura do guia do grupo) |
 | [CHECKLIST.md](CHECKLIST.md) | Checklist de entrega AED-II |
+
+Artigo (`article/artigo.docx`) e slides (`slides/apresentacao.pdf`) ficam apenas no ambiente local do grupo, fora do repositorio.
 
 ## Conclusao Resumida
 
