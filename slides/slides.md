@@ -4,7 +4,6 @@
 
 - Disciplina: AED-II - UFABC
 - Integrantes: [nomes do grupo]
-- Repositorio: https://github.com/GabryelBoer/huffman-lzw-compression
 
 ---
 
@@ -67,7 +66,7 @@
 # Slide 7: Experimentos (1/3)
 
 **Dataset:**
-- 4 arquivos .py/.c
+- 5 arquivos .py/.c
 - 1 log baseline
 
 **Metricas:**
@@ -90,7 +89,7 @@
 
 # Slide 9: Experimentos (3/3)
 
-**Graficos:** benchmark-plots/
+![Taxa de compressao](../benchmark-plots/compression-ratio.png)
 
 - Huffman: menos memoria
 - LZW: melhor em C repetitivo e logs
@@ -104,5 +103,3 @@
 - LZW: padroes repetitivos, descompressao rapida
 - Facilidade: empate tecnico
 - Futuro: repositorios completos, integracao Git
-
-**Repositorio:** https://github.com/GabryelBoer/huffman-lzw-compression
