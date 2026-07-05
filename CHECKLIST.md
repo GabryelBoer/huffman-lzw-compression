@@ -38,5 +38,5 @@
 
 ## GitHub
 
-- [ ] Repo publicado em GabryelBoer/huffman-lzw-compression
-- [ ] gh auth switch de volta para gabryel-boer_avenue
+- [x] Repo publicado em GabryelBoer/huffman-lzw-compression
+- [x] gh auth switch de volta para gabryel-boer_avenue
