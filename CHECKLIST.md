@@ -13,8 +13,8 @@
 
 - [x] README.md (estilo MANET)
 - [x] RESULTADOS-BENCHMARK.md
-- [x] article/artigo.tex (template SBC)
-- [x] slides/apresentacao.pdf (10 slides)
+- [x] article/artigo.docx (estrutura Guia_Huffman_LZW)
+- [x] slides/apresentacao.pdf (10 slides, sem link do repo)
 - [x] results/compression-summary.csv
 - [x] benchmark-plots/*.png
 - [ ] Artigo compilado em PDF (requer pdflatex local)
