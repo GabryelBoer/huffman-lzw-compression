@@ -121,23 +121,122 @@ repositorio publico permite reproduzir integralmente as medicoes reportadas.
 
 ---
 
-## Next Steps
+## Task 2: Content Verification — Intro & Problem
 
-- [ ] Task 2: Content Verification (Intro & Problem) — verify section completeness
-- [ ] Task 3: Bibliography Audit — verify references quality
-- [ ] Task 4: Algorithms — verify Huffman/LZW explanations
-- [ ] Task 5: Results — verify interpretation of 3 figures + 3 tables
-- [ ] Task 6: Conclusions & Abstract — refine if needed
-- [ ] Task 7: Portuguese Proofread — check grammar/naturalidade
-- [ ] Task 8: Format Audit — visual check of SBC compliance
-- [ ] Task 9: Requirements Cross-Check — final verification
+- **Introduction:** ⚠ FINDING — only ~0.5 page (target 1.0–1.5). Content valid (context, objective, justification present) but undersized. → Resolved by Fix A (below).
+- **Problem Statement:** ✓ PASS — realistic use case (code-source repositories), 4 explicit research questions, correct length.
+
+## Task 3: Bibliography Audit
+
+- **Count:** ⚠ FINDING — only 6 entries (minimum 10). → Resolved by Fix B (below).
+- **Qualis A:** 3 of target 5 (IEEE Trans. IT, Proc. IRE, IEEE Computer). → Resolved by Fix B.
+- **Format:** ✓ PASS — all entries have required fields; zero dangling citations.
 
 ---
 
-## Issues Found So Far
+## Fix A: Introduction Expansion (resolves Task 2 finding)
 
-**None critical.** Proceeding to Task 2.
+**Status:** ✓ DONE
+
+Added 4 new paragraphs to Introdução (now 8 paragraphs, ~1.2–1.4 pages):
+1. Quantitative context: repository growth, storage/transfer cost in backups, CI/CD, monorepos
+2. Source code as distinct compression domain: syntactic structure, recurring tokens, indentation, byte-statistics vs subsequence-repetition duality
+3. Method lineage: statistical coding founded on Shannon's information theory \cite{shannon1948} vs dictionary methods (Lempel-Ziv family \cite{ziv1977,ziv1978})
+4. Methodology preview: reproducible benchmark, 12 experiments, SHA-256 validation, entropy + lexical repetition metrics
+
+Evidence: "Problema de Pesquisa" now starts on page 2; "Trabalhos Relacionados" on page 3. PDF grew 8 → 9 pages (within 8–10 limit).
+
+## Fix B: Bibliography Expansion (resolves Task 3 finding)
+
+**Status:** ✓ DONE
+
+Added 4 classic peer-reviewed entries to referencias.bib (total now **10 entries**):
+- `shannon1948` (Bell System Technical Journal) — cited in Introdução and in Protocolo Experimental at the H(x) entropy formula
+- `ziv1978` (IEEE Trans. Information Theory) — cited in Introdução and Trabalhos Relacionados (LZ77 → LZ78 → LZW lineage)
+- `storer1982` (Journal of the ACM) — cited in Trabalhos Relacionados (theoretical foundation of textual substitution)
+- `witten1987` (Communications of the ACM) — cited in Trabalhos Relacionados (arithmetic coding as statistical alternative to Huffman)
+
+**Qualis A count: 7** (Proc. IRE, IEEE Computer, 2× IEEE Trans. IT, Bell Syst. Tech. J., JACM, CACM) — exceeds target of 5.
+All 10 entries cited in text (artigo.bbl contains exactly 10 \bibitem entries; zero BibTeX warnings). No new citations in Conclusões (SBC rule respected).
+
+**Critical repair found during Fix B:** the previous accent-correction pass had over-corrected identifiers, breaking the build silently:
+- `\bibliography{referências}` → fixed to `\bibliography{referencias}` (file on disk is ASCII; artigo.bbl was 49 bytes = empty bibliography)
+- `\includegraphics{fig-memória.png}` → fixed to `fig-memoria.png` (file on disk is ASCII)
+- Labels `sec:aplicação` / `fig:memória` → normalized to ASCII `sec:aplicacao` / `fig:memoria`
+
+## Task 4: Theoretical Foundation — ✓ PASS
+
+- Huffman: intuition (greedy bottom-up), data structures (min-heap, binary tree), complexities O(n log n) construction + O(m) encoding, space (tree + code table + frequency header), limitation (symbol-by-symbol) — all present and correct.
+- LZW: dictionary initialization (256 bytes), w+c extension rule, decoder special case, O(m) amortized with hash table, 4096-entry dictionary limit — all present and correct.
+- Comparison table (Tabela 1): 8 criteria, all claims defensible from benchmark data (e.g., 870 KB vs 110 KB memory matches Tabela 3).
+- No factual errors found; no corrections needed.
+
+## Task 5: Results & Analysis — ✓ PASS
+
+- 3 tables present and referenced: tab:comparacao, tab:dataset, tab:resultados.
+- 3 figures present, referenced in text, and confirmed included in compile log: fig-ratio.png, fig-tempo.png, fig-memoria.png.
+- Every result interpreted with mechanism (e.g., LZW expansion on small files explained by dictionary overhead; high-entropy payload penalizes dictionary compressors).
+- Theory-practice connection explicit in subsection "Teoria versus prática".
+- Neutral language throughout; both LZW wins (jansson_dump.c, access.log) and Huffman wins reported.
+
+## Task 6: Conclusions & Abstract — ✓ PASS
+
+- Conclusões answer all 4 research questions from Problema de Pesquisa: (i) rate per profile, (ii) memory/time in practice, (iii) entropy/lexical-repetition correlation, (iv) per-criterion effectiveness.
+- Zero citations in Conclusões (SBC rule).
+- Abstract: 7 lines in PDF (≤10 ✓). Resumo: 7 lines in PDF (≤10 ✓).
+- Introduction expansion added context but did not change the paper's claims; abstract/resumo remain accurate — no adjustment needed. Resumo accents fixed (cenário, há, é, rápida, repositório público, medições).
+
+## Task 7: Portuguese Proofread — ✓ PASS
+
+Full rewrite pass applied over artigo.tex covering ALL remaining unaccented words (~120+ corrections), including:
+- Verb "ser": "e" → "é" where verb (e.g., "O estudo de caso escolhido é a compressão", "A complexidade de tempo é O(n log n)"); conjunction "e" untouched.
+- Systematic fixes: codificação, decodificação, Conclusões (incl. \section{}), validação, distribuição/distribuições, cenário(s), único/única, ótimo, mínima, até, há, histórico, características, número, público, disponíveis, necessária, ocorrências, proporção, relação, típica, evidências, preferível, restrição/restrições, avaliação, reproduzível/reproduzíveis, heterogêneo, geração, determinística, ordenação, concatenação, condição, prévia, início, próxima, extensão, alcançou, medições, repositório, não, são, está, estão, mantêm, lê, revisões, versões, distinção, construção, árvore/Árvore, símbolo(s), funções, serialização, técnico, critério(s), híbrida(s), diferença(s), frequência(s), prática, Fundamentação Teórica, Comparação Teórica, Correlação, Aplicação, Implementação.
+- Table 1 caption and cells fixed (Comparação teórica, Critério, prévia, Não, Árvore, Dicionário, máx., reconstruído, Redundância, Frequência, Repetição, Cenário, Distribuição).
+- Address fixed: Santo André.
+- Residual scan (regex over 60+ known patterns): zero true positives remaining (only hits: conjunction "e" and ASCII filename fig-memoria.png, both correct).
+- Preamble improvements: added `\usepackage[T1]{fontenc}` (correct hyphenation of accented words); `[brazil]` → `[brazilian]` in babel. Compiles clean.
+- Academic tone: no first-person singular, no colloquialisms found.
+
+## Task 8: Format Audit & Final Compilation — ✓ PASS
+
+1. Full cycle compiled (pdflatex → bibtex → pdflatex ×2): zero errors, zero BibTeX warnings, zero undefined citations, no missing fonts/files.
+2. **Page count: 9** ("Output written on artigo.pdf (9 pages, 314122 bytes)") — within 8–10 ✓
+3. Table captions ABOVE tables (\caption precedes tabular in all 3 table envs); figure captions BELOW figures (\caption follows \includegraphics in all 3 figure envs) — SBC standard ✓
+4. Citations verified in PDF text via pdftotext: [Huffman 1952], [Shannon 1948], [Ziv and Lempel 1978], [Storer and Szymanski 1982], [Witten et al. 1987], [Welch 1984, Ziv and Lempel 1977], etc. — SBC [author year] format ✓
+5. GitHub repository link present in Aplicação Computacional: github.com/GabryelBoer/huffman-lzw-compression ✓
+6. Zero "undefined citation" warnings in final log ✓
+7. Final checklist created: `02-FINAL-CHECKLIST.md` ✓
+
+---
+
+## Task 9: Requirements Cross-Check
+
+| Req | Requirement | Status | Evidence |
+|-----|-------------|--------|----------|
+| DOC-01 | Concise title with keywords | ✓ PASS | "Comparação de Huffman e LZW na Compressão Lossless de Código-Fonte" — algorithms + technique + domain |
+| DOC-02 | Abstract + Resumo ≤10 lines with objective/methodology/results | ✓ PASS | 7 lines each in final PDF; 5-part structure present |
+| DOC-03 | Introduction contextualizing problem, objective, justification | ✓ PASS | 8 paragraphs, ~1.2–1.4 pages after Fix A; context + lineage + contribution + preview |
+| DOC-04 | Problem Statement with realistic case | ✓ PASS | Code-source repository storage/versioning; 4 explicit research questions |
+| DOC-05 | Bibliography with peer-reviewed sources | ✓ PASS | 10 entries, 7 Qualis A (IEEE/ACM/Bell), all cited, zero warnings |
+| DOC-06 | Algorithm explanation: structures, data, complexities | ✓ PASS | Huffman O(n log n)+O(m), LZW O(m) amortized, structures + comparison table |
+| DOC-07 | Comparison theory vs practice | ✓ PASS | 3 tables + 3 figures, per-file interpretation, "Teoria versus prática" subsection |
+| DOC-08 | Conclusions answering research questions | ✓ PASS | All 4 RQs answered; no new citations; future work grounded |
+| DOC-09 | Portuguese norma culta | ✓ PASS | Full accent pass (~120+ fixes), residual scan clean, academic tone verified |
+| DOC-10 | SBC format, 8–10 pages, captions positioned | ✓ PASS | 9 pages; table captions above, figure captions below; [author year] citations |
+
+**Result: 10/10 PASS.** Article ready for submission.
+
+---
+
+## Issues Found & Resolved
+
+1. **Broken bibliography (critical, latent):** previous accent pass renamed `\bibliography{referencias}` to `{referências}` — bibtex could not find the .bib, leaving an empty 49-byte .bbl. Fixed.
+2. **Broken figure include (critical, latent):** `fig-memória.png` referenced but disk file is `fig-memoria.png`. Fixed.
+3. **Undersized introduction:** resolved by Fix A (+4 paragraphs).
+4. **Insufficient bibliography:** resolved by Fix B (6 → 10 entries, 3 → 7 Qualis A).
+5. **~120+ missing accents:** resolved by full Task 7 rewrite pass.
 
 ---
 
 *Audit started: 2026-07-09 20:14 GMT-3*
+*Audit completed: 2026-07-09 (Fix A, Fix B, Tasks 4–9) — Phase 2 execution complete*
