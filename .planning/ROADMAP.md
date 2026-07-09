@@ -6,7 +6,7 @@
 
 | # | Phase | Goal | Requirements | Success Criteria |
 |---|-------|------|--------------|------------------|
-| 1 | Documentação de Código | README e análise de complexidade | CODE-01 to CODE-10 | Repositório pronto para benchmark |
+| 1 | Documentação de Código | README e análise de complexidade | CODE-01 to CODE-10 | ✓ Repositório pronto para benchmark |
 | 2 | Artigo Científico | Documento 8-10 páginas formato SBC | DOC-01 to DOC-10 | Artigo completo e formatado |
 | 3 | Slides Apresentação | 10 slides PDF com conteúdo estruturado | SLD-01 to SLD-09 | Slides prontos e em Moodle |
 | 4 | Defesa Oral | Apresentação e validação final | VAL-01 to VAL-07 | Defesa realizada com sucesso |
@@ -19,28 +19,36 @@
 
 **Requirements:** CODE-01 to CODE-10
 
+**Plan:** [01-01-PLAN.md](phases/01-code-documentation/01-01-PLAN.md)
+- **7 Tasks:** README expansion (3 tasks) + Code documentation (2 tasks) + Validation (2 tasks)
+- **Waves:** 1 (sequential phases) — Tasks 1, 4, 5 can parallelize in Wave 1; Tasks 2, 3, 6, 7 follow
+- **Estimated duration:** 3-5 days (parallel execution)
+
 **Success Criteria:**
-1. README descreve projeto, caso de uso (compressão código-fonte), estrutura do repositório
-2. README inclui instruções passo-a-passo: instalação, execução benchmark, visualização resultados
-3. Análise comparativa documentada: tempo prático vs complexidade teórica
-4. Complexidade de tempo explicada para Huffman e LZW (construção + execução)
-5. Complexidade de espaço analisada (memória usada em benchmarks reais)
-6. Facilidade de implementação comparada (linhas de código, estruturas usadas)
-7. Código-fonte comentado nas seções críticas (heap Huffman, dicionário LZW)
-8. Testes de validação documentados (round-trip, SHA-256)
-9. Repositório em estado executável (run-all.sh sem erros)
-10. README e código prontos para revisão de pares
+1. README descreve projeto, caso de uso (compressão código-fonte), estrutura do repositório — **Task 1**
+2. README inclui instruções passo-a-passo: instalação, execução benchmark, visualização resultados — **Tasks 1, 3**
+3. Análise comparativa documentada: tempo prático vs complexidade teórica — **Task 3 (Results section)**
+4. Complexidade de tempo explicada para Huffman e LZW (construção + execução) — **Task 2 (Table 1)**
+5. Complexidade de espaço analisada (memória usada em benchmarks reais) — **Task 2 (Table 1 + 2)**
+6. Facilidade de implementação comparada (linhas de código, estruturas usadas) — **Tasks 4, 5 (docstrings)**
+7. Código-fonte comentado nas seções críticas (heap Huffman, dicionário LZW) — **Tasks 4, 5**
+8. Testes de validação documentados (round-trip, SHA-256) — **Tasks 6, 7**
+9. Repositório em estado executável (run-all.sh sem erros) — **Task 7**
+10. README e código prontos para revisão de pares — **Task 7 (Peer Review Checklist)**
 
 **Deliverables:**
-- README.md atualizado (2-3 KB, well-structured)
-- Documentação de complexidade (teórica + prática)
-- Código comentado e validado
-- Testes passando
+- README.md atualizado (2.5-3.5 KB, 8 sections: Overview, Case Study, Algorithms, Complexity Analysis, Installation, Usage, Results, Validation)
+- Documentação de complexidade (3-table approach: theory, empirical, correlation)
+- Código comentado (module docstrings + function docstrings with Big-O + strategic inline comments)
+- Testes validados (round-trip SHA-256 lossless verified)
+- Repository peer-review ready (checklist 10/10)
 
 **Owner Notes:**
-- Use results CSV e gráficos existentes como evidência
-- Correlacionar complexidade teórica com tempos medidos
-- Diferenciar: O(n), O(n log n), O(k) por arquivo/algoritmo
+- Use results CSV e gráficos existentes como evidência (Task 2, 3)
+- Correlacionar complexidade teórica com tempos medidos (Task 2)
+- Diferenciar: O(n), O(n log n), O(k log k) por fase algoritmo (Task 2)
+- Strategic comments only at non-obvious decision points (heap, dictionary) (Tasks 4, 5)
+- Benchmark must execute cleanly from fresh environment (Task 7)
 
 ---
 
