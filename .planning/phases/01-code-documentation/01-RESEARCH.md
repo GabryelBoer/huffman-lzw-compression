@@ -875,7 +875,7 @@ Based on theory + measurements:
 **High-confidence items:** Claims verified via official sources (PEP 257, GitHub standards, MIT lectures)
 **Assumed items:** Best practices inferred from academic standards and 2025 documentation trends; needs user confirmation
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Should COMPLEXITY.md be a separate file or README section?**
    - *What we know:* README is the front door; complexity analysis is essential documentation

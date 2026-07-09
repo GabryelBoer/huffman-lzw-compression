@@ -1,3 +1,11 @@
+"""Huffman decoder module.
+
+Reverses Huffman encoding via tree traversal. Reconstructs the frequency table
+from the header, rebuilds the identical tree used at encoding time, then traverses
+the tree bit-by-bit to recover original data. Stateless: decoder needs no prior
+knowledge of the input alphabet or frequencies.
+"""
+
 import struct
 from typing import Dict
 
@@ -8,6 +16,36 @@ HUFFMAN_MAGIC = b"HUF1"
 
 
 def decode(data: bytes) -> bytes:
+    """Decode Huffman-encoded data.
+
+    Parses header to extract frequency table, reconstructs the encoding tree,
+    then traverses tree following encoded bitstream (0 = left, 1 = right) to
+    emit original bytes.
+
+    Args:
+        data: Huffman-encoded bytes (output of encode()).
+
+    Returns:
+        Decoded plaintext bytes.
+
+    Raises:
+        ValueError: If header is invalid (wrong magic) or bitstream is corrupted.
+
+    Complexity:
+        Time: O(n + k log k) where n = len(data), k = alphabet size.
+              Header parsing O(k), tree reconstruction O(k log k) via heap,
+              bitstream traversal O(n).
+        Space: O(k) for tree and frequency table.
+
+    Tree traversal convention: bit 0 = left child, bit 1 = right child.
+    This mirrors the encoding process where generate_codes appends '0' for left,
+    '1' for right.
+
+    Example:
+        >>> encoded = encode(b"hello")
+        >>> decode(encoded) == b"hello"
+        True
+    """
     if not data.startswith(HUFFMAN_MAGIC):
         raise ValueError("Arquivo Huffman invalido")
 
