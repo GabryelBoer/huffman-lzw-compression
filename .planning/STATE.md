@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-07-09)
 
 **Core value:** Comparação experimental rigorosa Huffman vs LZW com análise teórica e prática.
-**Current focus:** Phase 1 (Documentation)
+**Current focus:** Phase 3 (Slides) — Phases 1 e 2 completas
 
 ## Current Status
 
@@ -22,20 +22,17 @@ See: .planning/PROJECT.md (updated 2026-07-09)
 
 1. **Phase 1: Documentation** (Code + README analysis)
    - Goals: README, complexity analysis, validation
-   - Duration: ~3-5 days
-   - Status: NOT STARTED
+   - Status: ✓ COMPLETE (2026-07-09) — 10/10 requirements, peer-review checklist 10/10
 
 2. **Phase 2: Article** (Scientific paper, 8-10 pages, SBC format)
    - Goals: Full academic article with all required sections
-   - Duration: ~5-7 days
-   - Status: NOT STARTED
-   - [Parallel with Phase 3]
+   - Status: ✓ COMPLETE (2026-07-09) — artigo.pdf 9 páginas, 10 refs (7 Qualis A), DOC-01–10 10/10 PASS
+   - Pendências humanas: nomes reais dos autores (placeholder), confirmar repo GitHub público, inspeção visual final do PDF
 
 3. **Phase 3: Slides** (10-slide PDF presentation)
    - Goals: Presentation slides for 15-minute defense
    - Duration: ~2-3 days
-   - Status: NOT STARTED
-   - [Parallel with Phase 2]
+   - Status: NOT STARTED — próxima fase
 
 4. **Phase 4: Defense** (Oral presentation)
    - Goals: Present work, demonstrate mastery, pass evaluation
@@ -134,13 +131,12 @@ From benchmark run (in GitHub repo):
 
 ## Next Steps
 
-1. **Phase 1 Entry:** Execute `/gsd:plan-phase 1` to detail README improvements
-2. **Expected Outcome:** README + complexity analysis complete
-3. **Phase 2/3 Parallel:** After Phase 1, run Phase 2 (Article) and Phase 3 (Slides) in parallel
-4. **Phase 4 Gate:** After Phase 2/3 complete, await professor's presentation schedule
+1. **Human tasks (Phase 2 wrap-up):** substituir autoria placeholder em artigo.tex, confirmar repo GitHub público, inspecionar PDF visualmente
+2. **Phase 3 Entry:** Execute `/gsd-plan-phase 3` (Slides — 10 slides PDF, conteúdo deriva do artigo pronto)
+3. **Phase 4 Gate:** After Phase 3 complete, await professor's presentation schedule
 
 ---
 
 *State initialized: 2026-07-09*
-*Last phase transition: (none — project just initialized)*
-*Ready for Phase 1 planning*
+*Last phase transition: Phase 2 → complete (2026-07-09)*
+*Ready for Phase 3 planning*

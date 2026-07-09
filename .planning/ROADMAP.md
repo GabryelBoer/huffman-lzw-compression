@@ -166,8 +166,8 @@ Phase 4 é gate final — só após Phase 2 e 3 completos.
 
 | Métrica | Critério | Status |
 |---------|----------|--------|
-| README completo | Instruções + análise complexidade | Pending |
-| Artigo SBC válido | 8-10 págs, todas seções, formatado | Pending |
+| README completo | Instruções + análise complexidade | ✓ Done (Phase 1) |
+| Artigo SBC válido | 8-10 págs, todas seções, formatado | ✓ Done (9 págs, 10 refs, DOC 10/10) |
 | Slides estruturados | 10 slides, conteúdo mapping professor | Pending |
 | Apresentação realizada | 15 min máx, domínio demonstrado | Pending |
 | Todos presentes | Defesa com grupo completo | Pending |
