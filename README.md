@@ -1,105 +1,69 @@
 # Compressao Huffman vs LZW em Codigo-Fonte
 
-Comparacao de Huffman e LZW na compressao lossless de arquivos de codigo-fonte (.py e .c) para armazenamento e versionamento de repositorios de software.
+## Overview
 
-Trabalho da disciplina **Algoritmos e Estruturas de Dados II (AED-II)** - UFABC.
+Comparacao de Huffman e LZW na compressao lossless de arquivos de codigo-fonte (.py e .c) para armazenamento em repositorios. Trabalho AED-II - UFABC.
 
-## Resultados Principais
+## Case Study
 
-Dados coletados com `bash run-all.sh` em ambiente local (Python 3.14, macOS).
+Compressao de codigo-fonte: reducao de tamanho para backup/versionamento sem perda de informacao. Huffman e LZW oferecem trade-offs entre taxa, velocidade e memoria.
 
-| Arquivo | Algoritmo | Taxa | Economia (%) | Compressao (ms) | Descompressao (ms) | Memoria (KB) |
-|---------|-----------|------|--------------|-----------------|--------------------|--------------|
-| requests_sessions.py | Huffman | 1.73 | 42.10 | 35.5 | 34.1 | 110.4 |
-| requests_sessions.py | LZW | 1.66 | 39.73 | 33.0 | 13.4 | 870.7 |
-| jansson_dump.c | Huffman | 1.73 | 42.04 | 15.1 | 13.5 | 66.3 |
-| jansson_dump.c | LZW | 1.90 | 47.35 | 14.2 | 9.0 | 567.9 |
-| encoder_sample.py | Huffman | 1.19 | 15.86 | 1.4 | 1.3 | 20.5 |
-| encoder_sample.py | LZW | 0.98 | -1.61 | 1.4 | 1.3 | 98.6 |
-| lzw_encoder_sample.py | Huffman | 1.33 | 24.63 | 2.9 | 2.6 | 27.5 |
-| lzw_encoder_sample.py | LZW | 1.18 | 15.09 | 2.7 | 2.3 | 132.6 |
-| high_entropy_payload.py | Huffman | 1.28 | 22.07 | 17.9 | 18.5 | 64.0 |
-| high_entropy_payload.py | LZW | 0.75 | -33.60 | 17.6 | 11.5 | 695.4 |
-| access.log (baseline) | Huffman | 1.89 | 46.98 | 19.3 | 16.4 | 50.1 |
-| access.log (baseline) | LZW | 6.76 | 85.22 | 14.5 | 3.2 | 263.6 |
+## Algorithms
 
-## Visualizacoes
+**Huffman:** arvore binaria adaptada a frequencia de simbolos. O(n log n) construccao, O(n) encoding/decoding. Memoria eficiente (20-110 KB).
 
-### Taxa de compressao por arquivo
+**LZW:** dicionario dinamico com codigos variaveis. O(n) encoding/decoding. Padroes repetitivos. Memoria alta (98-870 KB, max 4096 entradas).
 
-![Taxa de compressao](benchmark-plots/compression-ratio.png)
+## Complexity Analysis
 
-Huffman vence em `requests_sessions.py` e arquivos de alta entropia. LZW vence em `jansson_dump.c` e no baseline `access.log`.
+| Arquivo | Huffman Taxa | LZW Taxa | Huffman Tempo (ms) | LZW Tempo (ms) | Huffman Memoria (KB) | LZW Memoria (KB) |
+|---------|---------|---------|---------|---------|---------|---------|
+| requests_sessions.py | 1.73 | 1.66 | 35.5→34.1 | 33.0→13.4 | 110.4 | 870.7 |
+| jansson_dump.c | 1.73 | 1.90 | 15.1→13.5 | 14.2→9.0 | 66.3 | 567.9 |
+| access.log (baseline) | 1.89 | 6.76 | 19.3→16.4 | 14.5→3.2 | 50.1 | 263.6 |
 
-### Tempo de compressao
+Conclusao: Huffman vence em memoria; LZW em padroes repetitivos e descompressao rapida.
 
-![Tempo de execucao](benchmark-plots/tempo-execucao.png)
+## Installation
 
-Tempos de compressao ficam proximos entre os algoritmos. A diferenca maior aparece na descompressao de arquivos medios com LZW.
-
-### Uso de memoria
-
-![Uso de memoria](benchmark-plots/memoria.png)
-
-Huffman usa consistentemente menos memoria (20 a 110 KB) que LZW (98 a 870 KB) por causa do dicionario adaptativo.
-
-## Estrutura do Repositorio
-
-```
-src/
-  huffman/          # heap, arvore, encode/decode
-  lzw/              # dicionario hash, encode/decode
-  io/               # bitstream
-  benchmark/        # compare, metrics, profile
-data/codigo/        # arquivos .py e .c de teste
-data/baseline/      # log de contraste
-results/            # CSVs do benchmark
-benchmark-plots/    # graficos PNG
-tests/              # testes round-trip
-run-all.sh          # executa benchmark completo
-plot-results.py     # gera graficos
-```
-
-## Pre-requisitos
-
-- Python 3.11+
-- matplotlib, numpy, pytest
-
-## Como Executar
+**Pre-requisitos:** Python 3.11+, matplotlib, numpy, pytest
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
+
+## Usage
+
+```bash
 bash run-all.sh
 ```
 
-O script executa o benchmark em `data/` e gera:
-- `results/compression-summary.csv`
-- `results/compression-detail-*.csv`
-- `benchmark-plots/compression-ratio.png`
-- `benchmark-plots/tempo-execucao.png`
-- `benchmark-plots/memoria.png`
+Executa benchmark em `data/` (codigo-fonte .py/.c + baseline .log) e gera:
+- `results/compression-summary.csv` (resumo)
+- `results/compression-detail-*.csv` (por arquivo)
+- `benchmark-plots/*.png` (graficos)
 
-## Parametros do Benchmark
+## Results
 
-| Parametro | Valor |
-|-----------|-------|
-| Algoritmos | Huffman, LZW |
-| Tipos de arquivo | .py, .c, .log (baseline) |
-| Metricas | taxa, fator, economia, tempo, memoria, entropia, repeticao lexical |
-| Validacao | SHA-256 round-trip (lossless) |
-| Dicionario LZW max | 4096 entradas |
+**Dados:** coletados em Python 3.14, macOS (Jul 5).
 
-## Documentacao
+![Taxa de compressao](benchmark-plots/compression-ratio.png)
+![Tempo de execucao](benchmark-plots/tempo-execucao.png)
+![Uso de memoria](benchmark-plots/memoria.png)
 
-| Documento | Conteudo |
-|-----------|----------|
-| [RESULTADOS-BENCHMARK.md](RESULTADOS-BENCHMARK.md) | Analise detalhada com graficos e correlacao perfil-desempenho |
-| [CHECKLIST.md](CHECKLIST.md) | Checklist de entrega AED-II |
+**Estrutura do Repositorio:**
+```
+src/huffman/           encode/decode, tree, heap
+src/lzw/               encode/decode, dicionario hash
+data/codigo/           arquivos .py e .c
+tests/                 round-trip SHA-256
+run-all.sh, plot-results.py
+```
 
-Artigo (`article/artigo.docx`) e slides (`slides/apresentacao.pdf`) ficam apenas no ambiente local do grupo, fora do repositorio.
+Huffman vence em entropia alta + memoria. LZW vence em padroes (C) + descompressao.
 
-## Conclusao Resumida
+## Validation
 
-Nao ha vencedor absoluto em codigo-fonte. Huffman e mais efetivo em memoria, arquivos pequenos e alta entropia. LZW e mais efetivo em padroes repetitivos (codigo C e logs) e em velocidade de descompressao.
+Round-trip verification: SHA-256(original) == SHA-256(decompress(compress(original))) para todos os testes. Veja [CHECKLIST.md](CHECKLIST.md) e [RESULTADOS-BENCHMARK.md](RESULTADOS-BENCHMARK.md).
