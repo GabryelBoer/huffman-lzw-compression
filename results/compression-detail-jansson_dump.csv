@@ -1,3 +1,3 @@
 arquivo,categoria,algoritmo,tamanho_original_bytes,tamanho_comprimido_bytes,taxa_compressao,fator_compressao,percentual_economizado,tempo_compressao_ms,tempo_descompressao_ms,memoria_pico_kb,entropia_shannon,taxa_repeticao_lexical,densidade_tokens,lossless_ok
-jansson_dump.c,c_medio,Huffman,14326,8304,1.7252,0.5796,42.04,16.213,14.335,66.28,4.3135,0.2046,0.0865,True
-jansson_dump.c,c_medio,LZW,14326,7542,1.8995,0.5265,47.35,15.278,9.832,567.89,4.3135,0.2046,0.0865,True
+jansson_dump.c,c_medio,Huffman,14326,8304,1.7252,0.5796,42.04,20.056,20.212,66.28,4.3135,0.2046,0.0865,True
+jansson_dump.c,c_medio,LZW,14326,7542,1.8995,0.5265,47.35,20.482,11.75,567.89,4.3135,0.2046,0.0865,True

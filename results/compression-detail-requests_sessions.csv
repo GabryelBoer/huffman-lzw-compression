@@ -1,3 +1,3 @@
 arquivo,categoria,algoritmo,tamanho_original_bytes,tamanho_comprimido_bytes,taxa_compressao,fator_compressao,percentual_economizado,tempo_compressao_ms,tempo_descompressao_ms,memoria_pico_kb,entropia_shannon,taxa_repeticao_lexical,densidade_tokens,lossless_ok
-requests_sessions.py,py_medio,Huffman,34072,19728,1.7271,0.579,42.1,37.145,36.519,110.42,4.5026,0.1289,0.0685,True
-requests_sessions.py,py_medio,LZW,34072,20536,1.6591,0.6027,39.73,35.281,14.136,870.67,4.5026,0.1289,0.0685,True
+requests_sessions.py,py_medio,Huffman,34072,19728,1.7271,0.579,42.1,52.906,43.657,110.42,4.5026,0.1289,0.0685,True
+requests_sessions.py,py_medio,LZW,34072,20536,1.6591,0.6027,39.73,40.102,15.445,870.67,4.5026,0.1289,0.0685,True

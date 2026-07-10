@@ -1,3 +1,3 @@
 arquivo,categoria,algoritmo,tamanho_original_bytes,tamanho_comprimido_bytes,taxa_compressao,fator_compressao,percentual_economizado,tempo_compressao_ms,tempo_descompressao_ms,memoria_pico_kb,entropia_shannon,taxa_repeticao_lexical,densidade_tokens,lossless_ok
-high_entropy_payload.py,py_medio,Huffman,13793,10749,1.2832,0.7793,22.07,18.758,19.194,64.02,6.0189,0.0,0.001,True
-high_entropy_payload.py,py_medio,LZW,13793,18428,0.7485,1.336,-33.6,18.362,12.449,695.42,6.0189,0.0,0.001,True
+high_entropy_payload.py,py_medio,Huffman,13793,10749,1.2832,0.7793,22.07,22.524,29.152,64.02,6.0189,0.0,0.001,True
+high_entropy_payload.py,py_medio,LZW,13793,18428,0.7485,1.336,-33.6,33.318,22.751,695.42,6.0189,0.0,0.001,True

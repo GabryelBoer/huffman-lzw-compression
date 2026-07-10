@@ -1,3 +1,3 @@
 arquivo,categoria,algoritmo,tamanho_original_bytes,tamanho_comprimido_bytes,taxa_compressao,fator_compressao,percentual_economizado,tempo_compressao_ms,tempo_descompressao_ms,memoria_pico_kb,entropia_shannon,taxa_repeticao_lexical,densidade_tokens,lossless_ok
-encoder_sample.py,py_pequeno,Huffman,1059,891,1.1886,0.8414,15.86,1.522,1.321,20.45,4.6932,0.1217,0.0595,True
-encoder_sample.py,py_pequeno,LZW,1059,1076,0.9842,1.0161,-1.61,1.44,1.38,98.58,4.6932,0.1217,0.0595,True
+encoder_sample.py,py_pequeno,Huffman,1059,891,1.1886,0.8414,15.86,3.504,1.887,20.45,4.6932,0.1217,0.0595,True
+encoder_sample.py,py_pequeno,LZW,1059,1076,0.9842,1.0161,-1.61,3.009,1.877,98.58,4.6932,0.1217,0.0595,True
