@@ -168,7 +168,7 @@ Phase 4 é gate final — só após Phase 2 e 3 completos.
 |---------|----------|--------|
 | README completo | Instruções + análise complexidade | ✓ Done (Phase 1) |
 | Artigo SBC válido | 8-10 págs, todas seções, formatado | ✓ Done (9 págs, 10 refs, DOC 10/10) |
-| Slides estruturados | 10 slides, conteúdo mapping professor | Pending |
+| Slides estruturados | 10 slides, conteúdo mapping professor | ✓ Done (pendente: nomes reais + Moodle) |
 | Apresentação realizada | 15 min máx, domínio demonstrado | Pending |
 | Todos presentes | Defesa com grupo completo | Pending |
 | Repositório acessível | GitHub público + link em slides | Pending |
