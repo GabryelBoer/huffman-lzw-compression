@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-07-09)
 
 **Core value:** Comparação experimental rigorosa Huffman vs LZW com análise teórica e prática.
-**Current focus:** Phase 3 (Slides) — Phases 1 e 2 completas
+**Current focus:** Phase 4 (Defense) — Phases 1–3 completas (Phase 3 pendente de input humano: nomes/matrículas)
 
 ## Current Status
 
@@ -31,8 +31,8 @@ See: .planning/PROJECT.md (updated 2026-07-09)
 
 3. **Phase 3: Slides** (10-slide PDF presentation)
    - Goals: Presentation slides for 15-minute defense
-   - Duration: ~2-3 days
-   - Status: NOT STARTED — próxima fase
+   - Status: ✓ COMPLETE PENDING HUMAN INPUT (2026-07-09) — apresentacao.pdf 10 páginas, SLD-01–09: 7✓/2⚠ (ver 03-AUDIT.md)
+   - Pendências humanas: substituir placeholder de nomes/matrículas no slide 1 + recompilar; upload no Moodle
 
 4. **Phase 4: Defense** (Oral presentation)
    - Goals: Present work, demonstrate mastery, pass evaluation
@@ -131,12 +131,12 @@ From benchmark run (in GitHub repo):
 
 ## Next Steps
 
-1. **Human tasks (Phase 2 wrap-up):** substituir autoria placeholder em artigo.tex, confirmar repo GitHub público, inspecionar PDF visualmente
-2. **Phase 3 Entry:** Execute `/gsd-plan-phase 3` (Slides — 10 slides PDF, conteúdo deriva do artigo pronto)
-3. **Phase 4 Gate:** After Phase 3 complete, await professor's presentation schedule
+1. **Human tasks (Phases 2–3 wrap-up):** substituir autoria placeholder em artigo.tex E slides/slides.tex (sincronizar nomes), recompilar ambos, confirmar repo GitHub público, inspecionar PDFs visualmente
+2. **Moodle:** upload de artigo.pdf e slides/apresentacao.pdf após resolver autoria (SLD-09)
+3. **Phase 4 Gate:** await professor's presentation schedule
 
 ---
 
 *State initialized: 2026-07-09*
-*Last phase transition: Phase 2 → complete (2026-07-09)*
-*Ready for Phase 3 planning*
+*Last phase transition: Phase 3 → complete pending human input (2026-07-09)*
+*Ready for Phase 4 (defense preparation)*
