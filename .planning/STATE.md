@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-07-09)
 
 **Core value:** Comparação experimental rigorosa Huffman vs LZW com análise teórica e prática.
-**Current focus:** Phase 4 (Defense) — Phases 1–3 completas (Phase 3 pendente de input humano: nomes/matrículas)
+**Current focus:** Phase 4 (Defense) — materiais de preparação completos; restam ações humanas (ensaios, presença, autoria nos slides)
 
 ## Current Status
 
@@ -37,7 +37,8 @@ See: .planning/PROJECT.md (updated 2026-07-09)
 4. **Phase 4: Defense** (Oral presentation)
    - Goals: Present work, demonstrate mastery, pass evaluation
    - Duration: Professor's schedule
-   - Status: NOT STARTED
+   - Status: ✓ PREP COMPLETE (2026-07-10) — ROTEIRO.md, QA-BANK.md (22 Q&A), DEMO-CHECKLIST.md, DIA-DA-DEFESA.md; clone fresco validado (README fiel, 14/14 testes); ver 04-AUDIT.md
+   - Pendências humanas: VAL-01 (confirmações de presença), ≥2 ensaios cronometrados, divisão de falas/Q&A, decisão sobre push ao remoto (local 16 commits à frente)
 
 ## Requirements by Phase
 
@@ -131,12 +132,13 @@ From benchmark run (in GitHub repo):
 
 ## Next Steps
 
-1. **Human tasks (Phases 2–3 wrap-up):** substituir autoria placeholder em artigo.tex E slides/slides.tex (sincronizar nomes), recompilar ambos, confirmar repo GitHub público, inspecionar PDFs visualmente
+1. **Human tasks (Phases 2–3 wrap-up):** substituir autoria placeholder em artigo.tex E slides/slides.tex (sincronizar nomes), recompilar ambos, inspecionar PDFs visualmente (repo GitHub público ✓ confirmado em 2026-07-10)
 2. **Moodle:** upload de artigo.pdf e slides/apresentacao.pdf após resolver autoria (SLD-09)
-3. **Phase 4 Gate:** await professor's presentation schedule
+3. **Phase 4 (humano):** preencher DIA-DA-DEFESA.md (nomes, confirmações VAL-01, divisão de falas/Q&A), realizar ≥2 ensaios cronometrados, montar backups do DEMO-CHECKLIST.md
+4. **Repo:** decidir se sincroniza o remoto (local 16 commits à frente; remoto curado sem article/slides/.planning — ver 04-AUDIT.md)
 
 ---
 
 *State initialized: 2026-07-09*
-*Last phase transition: Phase 3 → complete pending human input (2026-07-09)*
-*Ready for Phase 4 (defense preparation)*
+*Last phase transition: Phase 4 → prep complete, awaiting human rehearsals and defense day (2026-07-10)*
+*All GSD-executable phases (1–4) complete*
